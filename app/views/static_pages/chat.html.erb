@@ -1,0 +1,27 @@
+<% provide(:title, 'Chat')%>
+
+<% if logged_in? %>
+<div id="navigation">
+	<div id="subnavigation">
+<div id="community"><h1><%= render "layouts/location" %></h1></div>
+<div id="bottombuttons">
+<a href="/"><input type="image" src="/stream.png" width="135" height="41"></a>
+<a href="/posts"><input type="image" src="posts.png" width="135" height="41"></a>
+<a href="/meetups"><input type="image" src="/meetups.png" width="135" height="41"></a>
+<a href="/chat"><input type="image" src="/chat.png" width="135" height="41"></a>
+<a href="/groups"><input type="image" src="/groups.png" width="135" height="41"></a>
+</div>
+	</div>
+<% else %>
+
+<div id="navigation">	
+		<div id="streambutton"><a href="/"><input type="image" src="/blank.png" width="135" height="41"></a></div>
+		<div id="postsbutton"><a href="/posts"><input type="image" src="blank.png" width="135" height="41"></a></div>
+		<div id="meetupsbutton"><a href="/meetups"><input type="image" src="/blank.png" width="135" height="41"></a></div>
+		<div class="origin"><a href="/chat"><input type="image" src="/chatlime.png" width="135" height="41"></a></div>
+		<div id="groupsbutton"><a href="/groups"><input type="image" src="/blank.png" width="135" height="41"></a></div>
+		<div id="peoplebutton"><a href="/web"><input type="image" src="/blank.png" width="135" height="41"></a></div>
+		<div id="profilebutton"><a href="/profile"><input type="image" src="/blank.png" width="135" height="41"></a></div>
+		</div>
+		
+		<% end %>

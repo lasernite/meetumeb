@@ -1,0 +1,54 @@
+	
+	
+<% if logged_in? %>
+
+<div id="heading">
+	
+	<div id="inheading">
+<div id="meetumehead"><%= link_to "Meetume", root_path %></div>
+
+<div id="search"><div id="searchfield"> <%= text_field_tag :search %></div>
+<div id="searchbutton"><a href="/search"><input type="image" src="/search.png" width="81" height="25"></a></div></div>
+
+
+<div id="settings"><a href="/settings"><input type="image" src="/settings.png" width="101" height="31"></a></div>
+<div id="messages"><a href="/messages"><input type="image" src="/messages.png" width="101" height="31"></a></div>
+<div id="activity"><a href="/activity"><input type="image" src="/activity.png" width="101" height="31"></a></div>
+<div id="profile"><a href="/profile"><input type="image" src="/profile.png" width="101" height="31"></a></div>
+
+<div id="logoutbutton"><%= link_to "Logout", logout_path, method: "delete" %></div>
+
+</div>
+</div>
+
+<% else %>	
+	<div id="heading">
+		
+		<div id="inheading">
+			
+	<div id="meetume"><%= link_to "Meetume", root_path %></div>
+	
+	<div id="city"><%= render "layouts/location" %></div>
+	
+	<div id="login">
+	  <%= form_for(:session, :url => sessions_path) do |f| %>
+
+	      <div id="emailcss"><%= f.label :email %></div>
+	      <div id="emailboxcss"><%= f.text_field :email %></div>
+
+	     <div id="passwordcss"> <%= f.label :password %></div>
+	      <div id="passboxcss"><%= f.password_field :password %></div>
+	
+	      <div id="loginbutton"><%= f.submit "Login", :class => "btn btn-large btn-primary", :type => "image", :src => "/blank.png", :width =>"125", :height => "48"%></div>
+	    <% end %>
+	</div>
+	
+	<div id="joinbutton"><a href="/join"><input type="image" src="/blank.png" width="300" height="83"></a></div>
+	
+	</div>
+	
+</div>
+
+<% end %>
+
+	
