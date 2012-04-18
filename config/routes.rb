@@ -1,9 +1,12 @@
 Meetumea::Application.routes.draw do
   resources :locations
 
+  resources :communitys
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
+  
+  match '/communitys', to: "communitys#index"
   
   match '/users', to: "users#index"
   match '/profile/info', to: "users#info"
