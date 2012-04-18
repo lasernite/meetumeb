@@ -1,6 +1,6 @@
 class CommunitysController < ApplicationController
   
   def index
-    @user = @city+@state
-end
+    @community = @city+@state
+    end
 end
