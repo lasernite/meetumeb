@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    @community = @city+@state
   end
   
   def show

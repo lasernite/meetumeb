@@ -8,7 +8,4 @@ class ApplicationController < ActionController::Base
     @state = request.location.state
   end
   
-  def community
-     @community = @city+@state
-  end
 end
