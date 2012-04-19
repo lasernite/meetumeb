@@ -28,13 +28,16 @@ class User < ActiveRecord::Base
       Micropost.where("user_id = ?", id)
     end
     
+
     def add_community
+      @city = request.location.city
+      @state = request.location.state
+      @community = @city+@state
       self.community = @community
     end
   
     private
     
-  
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
