@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :community
   has_secure_password
   has_many :microposts, dependent: :destroy
-  belongs_to :community
   before_save :add_community
   before_save :create_remember_token
   
