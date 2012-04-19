@@ -5,9 +5,6 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
-    @user.add_community(request.location.city)
-    @user.add_community(request.location.state)
-    
   end
   
   def show

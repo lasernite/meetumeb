@@ -27,9 +27,8 @@ class User < ActiveRecord::Base
     def feed
       Micropost.where("user_id = ?", id)
     end
-    
 
-    def add_community(request)
+    def add_community
       @city = request.location.city
       @state = request.location.state
       @community = @city+@state
