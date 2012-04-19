@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
     end
     
 
-    def add_community
+    def add_community(request)
       @city = request.location.city
       @state = request.location.state
       @community = @city+@state
