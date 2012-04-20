@@ -8,7 +8,11 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.5'
 gem 'taps'
 
-group :development do
+group :production do
+  gem 'pg', '0.12.2'
+end
+
+group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'annotate', '~> 2.4.1.beta'
 end
@@ -36,11 +40,6 @@ group :test do
   gem 'cucumber-rails', '1.2.1'
   gem 'database_cleaner', '0.7.0'
 end
-
-group :production do
-  gem 'pg', '0.12.2'
-end
-
 
 #Nifty Scaffold
 
