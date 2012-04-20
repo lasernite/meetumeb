@@ -4,6 +4,7 @@ class MicropostsController < ApplicationController
     
     def create
       @micropost = current_user.microposts.build(params[:micropost])
+      @micropost.add_community(request.location.city, request.location.state)
       if @micropost.save
         flash[:success] = "Micropost created!"
         redirect_to profile_path
