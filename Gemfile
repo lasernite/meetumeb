@@ -11,7 +11,7 @@ group :production do
   gem 'pg', '0.12.2'
 end
 
-group :development do
+group :development, :test do
   gem 'sqlite3', '1.3.5'
 gem 'taps'
   gem 'annotate', '~> 2.4.1.beta'

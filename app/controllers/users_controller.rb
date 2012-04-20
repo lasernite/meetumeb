@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    @user.add_community(request.location.city, request.location.state)
   end
   
   def show
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
+    @user.add_community(request.location.city, request.location.state)
     if @user.save
       log_in @user
       flash[:success] = "Welcome to Meetume, your online community!"
@@ -21,7 +23,6 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
-    @user.add_community(request.location.city, request.location.state)
   end
   
   def edit
