@@ -1,7 +1,6 @@
 class Micropost < ActiveRecord::Base
   attr_accessible :content, :community
   belongs_to :user
-  before_save :add_community
   
   validates :content, presence: true, length: {maximum: 300}
   validates :user_id, presence: true
