@@ -14,32 +14,32 @@
 ActiveRecord::Schema.define(:version => 20120419190412) do
 
   create_table "locations", :force => true do |t|
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string    "address"
+    t.float     "latitude"
+    t.float     "longitude"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
   end
 
   create_table "microposts", :force => true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "community"
+    t.string    "content"
+    t.integer   "user_id"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
+    t.string    "community"
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.string   "password_digest"
-    t.string   "remember_token"
-    t.boolean  "admin",           :default => false
-    t.string   "community"
+    t.string    "name"
+    t.string    "email"
+    t.timestamp "created_at",                         :null => false
+    t.timestamp "updated_at",                         :null => false
+    t.string    "password_digest"
+    t.string    "remember_token"
+    t.boolean   "admin",           :default => false
+    t.string    "community"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
