@@ -10,9 +10,6 @@ class Micropost < ActiveRecord::Base
   
   
   def add_community
-    @city = request.location.city
-    @state = request.location.state
-    @community = @city+@state
     self.community = @community
   end
 end

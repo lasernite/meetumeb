@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+    @user.add_community(request.location.city, request.location.state)
   end
   
   def edit

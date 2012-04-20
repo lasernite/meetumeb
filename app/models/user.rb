@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :community
   has_secure_password
   has_many :microposts, dependent: :destroy
-  before_save :add_community
   before_save :create_remember_token
   
   validates :name, presence: true, length:{maximum: 50}
@@ -28,11 +27,8 @@ class User < ActiveRecord::Base
       Micropost.where("user_id = ?", id)
     end
 
-    def add_community
-      @city = request.location.city
-      @state = request.location.state
-      @community = @city+@state
-      self.community = @community
+    def add_community(city, state)
+      self.community = city.to_s + state.to_s
     end
   
     private
