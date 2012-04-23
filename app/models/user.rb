@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum:6}
   validates :password_confirmation, presence: true
   
+    def communityfeed
+      Micropost.where("community = ?", user.community)
+    end
   
     def feed
       Micropost.where("user_id = ?", id)
