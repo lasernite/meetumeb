@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
   
     def communityfeed
-      Micropost.where("community = ?", user.community)
+      Micropost.where("community = ?", self.community)
     end
   
     def feed
