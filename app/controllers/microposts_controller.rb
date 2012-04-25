@@ -7,12 +7,12 @@ class MicropostsController < ApplicationController
       @micropost.add_community(request.location.city, request.location.state)
       if @micropost.save
         flash[:success] = "Micropost created!"
-        redirect_to profile_path
+        redirect_to root_path
       else
         @micropost = current_user.microposts.build if logged_in?
         @user = User.find_by_remember_token(cookies[:remember_token])
         @microposts = @user.microposts.paginate(page: params[:page])
-        redirect_to profile_path
+        redirect_to root_path
       end
     end
   

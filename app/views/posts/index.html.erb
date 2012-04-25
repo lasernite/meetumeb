@@ -1,0 +1,43 @@
+<div id="navigation">
+	<div id="subnavigation">
+<div id="community"><h1><%= render "layouts/location" %></h1></div>
+<div id="bottombuttons">
+<a href="/"><input type="image" src="/stream.png" width="135" height="41"></a>
+<a href="/posts"><input type="image" src="posts.png" width="135" height="41"></a>
+<a href="/meetups"><input type="image" src="/meetups.png" width="135" height="41"></a>
+<a href="/chat"><input type="image" src="/chat.png" width="135" height="41"></a>
+<a href="/groups"><input type="image" src="/groups.png" width="135" height="41"></a>
+</div>
+	</div>
+	
+	<br>
+	<br>
+	
+
+<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Community</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= post.community %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>
