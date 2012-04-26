@@ -22,7 +22,6 @@ class MicropostsController < ApplicationController
       redirect_back_or root_path
     end
     
-    
     private
     
     def correct_user

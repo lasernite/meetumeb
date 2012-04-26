@@ -8,8 +8,8 @@
 	    Posted <%= time_ago_in_words(communityfeed_item.created_at) %> ago.
 	  </span>
 	<% if current_user?(communityfeed_item.user) %>
-	    <%= link_to "delete", communityfeed_item, method:  :delete,
-	                                     confirm: "You sure?",
-	                                     title:   communityfeed_item.content %>
+	    <%= link_to "delete", communityfeed_item, :method => :delete,
+	                                     :confirm => "You sure?",
+	                                     :title =>  communityfeed_item.content %>
 	  <% end %>
 	</li>

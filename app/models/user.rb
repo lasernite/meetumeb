@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :community
   has_secure_password
   has_many :microposts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   before_save :create_remember_token
   
   validates :name, presence: true, length:{maximum: 50}
