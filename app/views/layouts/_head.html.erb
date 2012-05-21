@@ -7,19 +7,28 @@
 	<div id="inheading">
 <div id="meetumehead"><%= link_to "Meetume", root_path %></div>
 
-<div id="search"><div id="searchfield"> <%= text_field_tag :search %></div>
-<div id="searchbutton"><a href="/search"><input type="image" src="/search.png" width="81" height="25"></a></div></div>
-
-
-<div id="settings"><a href="/settings"><input type="image" src="/settings.png" width="101" height="31"></a></div>
-<div id="messages"><a href="/messages"><input type="image" src="/messages.png" width="101" height="31"></a></div>
-<div id="activity"><a href="/activity"><input type="image" src="/activity.png" width="101" height="31"></a></div>
-<div id="profile"><a href="/profile"><input type="image" src="/profile.png" width="101" height="31"></a></div>
+<div id="messages"><a href="/messages"><input type="image" src="/meetumemail.png" width="35" height="35"></a></div>
+<div id="activity"><a href="/activity"><input type="image" src="/worldmeetume.png" width="35" height="35"></a></div>
+<div id="search"><div id="searchfield"><input name="search" type="text" size="50" placeholder="Search"></div>
+</div>
+<div id="profile"><a href="/profile"><input type="image" src="/meetumeprofile.png" width="35" height="35"></a><a href="/profile">Laser Nite</a></div>
 
 <div id="logoutbutton"><%= link_to "Logout", logout_path, method: "delete" %></div>
 
 </div>
 </div>
+
+<div id="navigation">
+	<div id="subnavigation">
+<div id="community"><h1><%= render "layouts/location" %></h1></div>
+<div id="bottombuttons">
+<a href="/"><input type="image" src="/streammeetume.png" width="50" height="50">Stream</a>
+<a href="/posts"><input type="image" src="postsmeetume.png" width="50" height="50">Posts</a>
+<a href="/meetups"><input type="image" src="/eventsmeetume.png" width="50" height="50">Events</a>
+<a href="/chat"><input type="image" src="/chatmeetume.png" width="50" height="50">Chat</a>
+<a href="/groups"><input type="image" src="/groupsmeetume.png" width="50" height="50">Groups</a>
+</div>
+	</div>
 
 <% else %>	
 	<div id="heading">

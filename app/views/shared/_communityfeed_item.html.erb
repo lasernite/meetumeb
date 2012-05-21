@@ -12,4 +12,14 @@
 	                                     confirm: "You sure?",
 	 									 title:  communityfeed_item.content %>
 	  <% end %>
+	
+	<% @micropost.comments.each do |c| %>
+	  <p><%= link_to 'comments', micropost %>
+	    <b><%=h c.name %> said:</b><br />
+	    <%= time_ago_in_words(c.created_at) %> ago
+	  </p>
+	<p>
+	    <%=h c.body %>
+	  </p>
+	<% end %>
 	</li>

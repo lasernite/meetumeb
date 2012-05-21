@@ -2,6 +2,19 @@ class MicropostsController < ApplicationController
     before_filter :logged_in_user, only: [:create, :destroy]
     before_filter :correct_user, only: :destroy
     
+    def index
+      @microposts = Micropost.all
+      
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @micrposts }
+      end
+    end
+    
+    def show
+       @micropost = Micropost.find(params[:id])
+    end
+    
     def create
       @micropost = current_user.microposts.build(params[:micropost])
       @micropost.add_community(request.location.city, request.location.state)
