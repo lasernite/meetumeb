@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     redirect_to @micropost
     respond_to do |format|
   end
+end
 
  
   def destroy
