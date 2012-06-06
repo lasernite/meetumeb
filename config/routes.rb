@@ -8,7 +8,9 @@ Meetumea::Application.routes.draw do
   resources :communitys
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts
+  resources :microposts do
+    resources :comments
+  end
   
   match '/communitys', to: "communitys#index"
   
