@@ -1,6 +1,6 @@
 Meetumea::Application.routes.draw do
   
-        constraints(:host => /meetume.com/) do
+        constraints(:host => "meetume.com") do
           root :to => redirect("http://www.meetume.com")
           match '/*path', :to => redirect {|params| "http://www.meetume.com/#{params[:path]}"}
         end
