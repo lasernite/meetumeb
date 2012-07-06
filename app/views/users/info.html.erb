@@ -1,17 +1,5 @@
 <% if logged_in? %>
-<div id="navigation">
-	<div id="subnavigation">
-<div id="community"><h1><%= @city %>, <%= @state %></h1></div>
-<div id="bottombuttons">
-<a href="/"><input type="image" src="/stream.png" width="135" height="41"></a>
-<a href="/posts"><input type="image" src="posts.png" width="135" height="41"></a>
-<a href="/meetups"><input type="image" src="/meetups.png" width="135" height="41"></a>
-<a href="/chat"><input type="image" src="/chat.png" width="135" height="41"></a>
-<a href="/groups"><input type="image" src="/groups.png" width="135" height="41"></a>
-</div>
-	</div>
-	
-	
+
 	<% provide(:title, @user.name) %>
 
 		      
