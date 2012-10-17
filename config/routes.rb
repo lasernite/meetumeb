@@ -4,6 +4,11 @@ Meetumea::Application.routes.draw do
           root :to => redirect("http://www.meetume.com")
           match '/*path', :to => redirect {|params| "http://www.meetume.com/#{params[:path]}"}
         end
+        
+        constraints(:host => "amongu.com") do
+          root :to => redirect("http://www.amongu.com")
+          match '/*path', :to => redirect {|params| "http://www.amongu.com/#{params[:path]}"}
+        end
       
   resources :comments
 
