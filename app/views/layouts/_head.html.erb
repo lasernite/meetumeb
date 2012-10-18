@@ -9,8 +9,7 @@
 
 <div id="messages"><a href="/messages"><input type="image" src="/meetumemail.png" width="35" height="35"></a></div>
 <div id="activity"><a href="/activity"><input type="image" src="/worldmeetume.png" width="35" height="35"></a></div>
-<div id="search"><div id="searchfield"><input name="search" type="text" size="50" placeholder="Search"></div>
-</div>
+<div id="searchfield"><input name="search" type="text" size="50" placeholder="Search"></div>
 <div id="profile"><a href="/profile"><input type="image" src="/meetumeprofile.png" width="35" height="35"></a><a href="/profile"><%= current_user.name %></a></div>
 
 <div id="logoutbutton"><%= link_to "Logout", logout_path, method: "delete" %></div>
