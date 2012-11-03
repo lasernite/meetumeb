@@ -2,6 +2,23 @@
 	
 <% if logged_in? %>
 
+<head>
+<style media="screen" type="text/css">
+
+.heading {
+background-color: #2374ee; 
+padding-top:12px;
+padding-bottom:30px;
+}
+
+.inheading {
+width:950px; 
+margin:auto;
+}
+
+</style>
+</head>
+
 <div class="heading">
 <div class="inheading"><div class="meetumehead"><%= link_to "AmongU", root_path %></div>
   <div class="messages"><a href="/messages"><input type="image" src="/meetumemail.png" width="35" height="35"></a></div>
