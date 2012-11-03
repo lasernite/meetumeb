@@ -1,72 +1,58 @@
 								/* Logged In Header */
 
-#logoutbutton {
-margin-left: 914px;
-position: relative;
-bottom: 20px;
-}
 
-#searchbutton {
-    float:left;
-	left:5px;
-    top:6px;
-position: relative;
-}
-
-
-#meetumehead {
-font-size: 40px;
-color: #FFF;
+.meetumehead {
+font-size:40px;
 font-family: myriad pro;
+position:relative;
 float:left;
-margin-top:6px;
 }
 
-#settings {
-	float:left;
-	left:40px;
-	top:12px;
-	position:relative;
-}
-
-#messages {
-	float:left;
-	left:5%;
-	top:12px;
-	position:relative;
-}
-
-#activity {
-float:left;
-left:6%;
-top:12px;
+.logoutbutton {
+left:60px;
 position:relative;
 }
 
-#searchbox {
+.searchbox {
 float:left;
 position:relative;
-left:10%;
-top:12px;
+left:40px;
+
 }
 
-#profile {
-left:14%;
-top:12px;
+.messages {
+float:left;
 position:relative;
+left:20px;
+
 }
 
+.activity {
+float:left;
+position:relative;
+left:30px;
+
+}
+
+.profile {
+float:left;
+position:relative;
+left:50px;
+
+}
 
 
 								/* Everything Else */
 									
 					
 
-#heading {
+.heading {
 	background-color: #2374ee; 
+	padding-top:12px;
+	padding-bottom:30px;
 }
 
-#inheading {
+.inheading {
 width:950px; 
 margin:auto;
 
